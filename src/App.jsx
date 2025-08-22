@@ -30,7 +30,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (  
-    //  <WishlistProvider>
     <Router>
       <ScrollToTop />
       <div className="flex flex-col font-roboto bg-[#FEEEEE]">
@@ -61,7 +60,6 @@ const App = () => {
       </div>
        <ToastContainer />
     </Router>
-    // </WishlistProvider>
   );
 };
 
