@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import LoginSignup from "./components/LoginSignUp";
+import ForgetPassword from "./components/ForgotPassword";
 import HomePage from "./components/Home";
 import AboutSection from "./components/AboutUs";
 import Therapy from "./components/Therapy";
@@ -21,11 +23,13 @@ import ApproachForm from "./components/ApproachForm";
 import HappinessWeek from "./components/HappinessWeek";
 import MeditationSection from "./components/Meditation";
 import PopularMeditations from "./components/PopularMeditation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
 const App = () => {
-  return (
+  return (  
     //  <WishlistProvider>
     <Router>
       <ScrollToTop />
@@ -35,6 +39,8 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutSection />} />
           <Route path="/therapy" element={<Therapy />} />
+          <Route path="/login-signup" element={<LoginSignup />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/family-therapy" element={<FamilyTherapy />} />
           <Route path="/individual-therapy" element={<IndividualTherapy />} />
           <Route path="/couples-therapy" element={<CouplesTherapy />} />
@@ -53,6 +59,7 @@ const App = () => {
         </Routes>
         <Footer />
       </div>
+       <ToastContainer />
     </Router>
     // </WishlistProvider>
   );

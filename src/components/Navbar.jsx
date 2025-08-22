@@ -17,9 +17,9 @@ const linkBase =
 
 const getLinkClass = (label, isActive) => {
   if (label === "Home") {
-    return isActive ? "text-[#6F145F]" : "text-[#E3FFD4]"; 
+    return isActive ? "text-[#6F145F]" : "text-[#E3FFD4]";
   }
-  return isActive ? "text-[#6F145F]" : "text-white"; 
+  return isActive ? "text-[#6F145F]" : "text-white";
 };
 
 const Navbar = () => {
@@ -57,11 +57,13 @@ const Navbar = () => {
           alt="Search"
           className="h-7 w-7 lg:h-8 lg:w-8 "
         />
-        <img
-          src={userIcon}
-          alt="User"
-          className="h-7 w-7 lg:h-8 lg:w-8 "
-        />
+        <NavLink to="/login-signup">
+          <img
+            src={userIcon}
+            alt="User"
+            className="h-7 w-7 lg:h-8 lg:w-8 cursor-pointer"
+          />
+        </NavLink>
 
         <button
           className="lg:hidden flex flex-col justify-center gap-1.5 p-2 rounded-md"
@@ -90,6 +92,15 @@ const Navbar = () => {
               </NavLink>
             </li>
           ))}
+          <li>
+      <NavLink
+        to="/login-signup"
+        className={`${linkBase} text-white hover:text-yellow-300`}
+        onClick={() => setOpen(false)}
+      >
+        Login
+      </NavLink>
+    </li>
         </ul>
       )}
     </nav>
