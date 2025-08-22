@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 export default function HappinessWeek() {
+   useEffect(() => {
+      document.title = 'Happiness Week | Dee Plus';
+    }, []);
     const navigate = useNavigate();
   return (
     <div className="bg-[#feeeee] min-h-screen py-16 px-6">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ft1 from "../assets/images/fam1.jpg";
 import ft2 from "../assets/images/fam2.jpg";
@@ -48,6 +48,9 @@ const therapies = [
 ];
 
 const FamilyTherapy = () => {
+   useEffect(() => {
+      document.title = 'Family Therapy | Dee Plus';
+    }, []);
     const navigate = useNavigate();
   return (
     <section className="bg-pink-100 py-12 px-6 md:px-16">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import gpay from "../assets/images/gpay.png";
 import phonepay from "../assets/images/phonepay.png";
 import paytm from "../assets/images/paytm.png";
@@ -7,9 +7,12 @@ import whatsapp from "../assets/images/whatsapp.png";
 import successImg from "../assets/images/paymentsuccess.png";
 
 const PaymentPage = () => {
-  const [selectedMethod, setSelectedMethod] = useState(""); // Changed to single string
+   useEffect(() => {
+      document.title = 'Payment | Dee Plus';
+    }, []);
+  const [selectedMethod, setSelectedMethod] = useState(""); 
   const [showModal, setShowModal] = useState(false);
-  const [error, setError] = useState(""); // Added error state
+  const [error, setError] = useState(""); 
   
   const paymentMethods = [
     { name: "Debit/ Credit Card", img: null },
@@ -21,8 +24,8 @@ const PaymentPage = () => {
   ];
 
   const handleSelection = (name) => {
-    setSelectedMethod(name); // Set only one method at a time
-    setError(""); // Clear error when user makes selection
+    setSelectedMethod(name); 
+    setError(""); 
   };
 
   const handleConfirm = () => {
@@ -69,14 +72,13 @@ const PaymentPage = () => {
 
       <div className="w-full max-w-4xl bg-[rgba(178,133,192,0.35)] rounded-[40px] md:rounded-[70px] p-6 md:p-10">
         <div className="space-y-4 text-sm md:text-3xl">
-          {/* Debit / Credit Card */}
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 md:space-x-10">
               <span>Debit/ Credit Card</span>
             </div>
             <input
-              type="radio" // Changed from checkbox to radio
-              name="paymentMethod" // Added name for radio group
+              type="radio" 
+              name="paymentMethod" 
               checked={selectedMethod === "Debit/ Credit Card"}
               onChange={() => handleSelection("Debit/ Credit Card")}
               className="w-8 h-8 md:me-10 bg-white cursor-pointer rounded-lg border-2 border-black appearance-none checked:bg-blue-600 checked:border-blue-600 relative
@@ -84,10 +86,8 @@ const PaymentPage = () => {
             />
           </div>
 
-          {/* UPI Label */}
           <p className="font-bold mt-4">UPI</p>
 
-          {/* UPI Methods */}
           {paymentMethods
             .filter((m) => m.name !== "Debit/ Credit Card")
             .map((method, idx) => (
@@ -103,8 +103,8 @@ const PaymentPage = () => {
                   <span>{method.name}</span>
                 </div>
                 <input
-                  type="radio" // Changed from checkbox to radio
-                  name="paymentMethod" // Added name for radio group
+                  type="radio" 
+                  name="paymentMethod" 
                   checked={selectedMethod === method.name}
                   onChange={() => handleSelection(method.name)}
                   className="w-8 h-8 md:me-10 bg-white cursor-pointer rounded-lg border-2 border-black appearance-none checked:bg-blue-600 checked:border-blue-600 relative
@@ -114,7 +114,6 @@ const PaymentPage = () => {
             ))}
         </div>
 
-        {/* Error Message */}
         {error && (
           <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center">
             {error}

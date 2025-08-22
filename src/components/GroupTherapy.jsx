@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import gt1 from "../assets/images/gt1.jpg";
 import gt2 from "../assets/images/gt2.jpg";
@@ -47,6 +47,9 @@ const therapies = [
 ];
 
 const GroupTherapy = () => {
+   useEffect(() => {
+      document.title = 'Group Therapy | Dee Plus';
+    }, []);
   const navigate = useNavigate();
 
   return (

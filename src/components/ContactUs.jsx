@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import captchaImg from "../assets/images/captcha.png";
 import contactIcon from "../assets/images/meditation_853x480.jpg-min.jpg";
 
 const ContactUs = () => {
+   useEffect(() => {
+      document.title = 'Contact Us | Dee Plus';
+    }, []);
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",

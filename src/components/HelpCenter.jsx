@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const HelpCenter = () => {
+   useEffect(() => {
+      document.title = 'Help Center | Dee Plus';
+    }, []);
   return (
     <div className="bg-[#feeeee] min-h-screen py-12 px-6 sm:px-12 lg:px-24">
       <div className="max-w-5xl mx-auto">

@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import modalImage from "../assets/images/approachImage.png";
 
 const ApproachForm = () => {
+   useEffect(() => {
+      document.title = 'Approach Form | Dee Plus';
+    }, []);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 

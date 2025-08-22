@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Partnership = () => {
+   useEffect(() => {
+      document.title = 'Partnership | Dee Plus';
+    }, []);
   return (
     <div className="bg-[#fdf6f9] min-h-screen py-12 px-6 sm:px-12 lg:px-20">
-      {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-3xl sm:text-4xl font-bold text-[#6F145F] mb-4">
           Partner with Dee Plus
@@ -15,7 +17,6 @@ const Partnership = () => {
         </p>
       </div>
 
-      {/* Partnership Benefits */}
       <div className="grid md:grid-cols-2 gap-8 mb-16">
         <div className="bg-white shadow-md rounded-2xl p-6">
           <h2 className="text-xl font-semibold text-[#6F145F] mb-3">

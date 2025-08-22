@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import image1 from "../assets/images/therapy1.png";
@@ -9,9 +9,11 @@ import image5 from "../assets/images/therapy5.png";
 import image6 from "../assets/images/therapy6.png";
 
 const TherapySection = () => {
+   useEffect(() => {
+      document.title = 'Therapy | Dee Plus';
+    }, []);
   const navigate = useNavigate();
 
-  // Navigation handler
   const handleNavigate = (path) => {
     navigate(path);
   };

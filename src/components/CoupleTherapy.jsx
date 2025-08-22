@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ct1 from "../assets/images/ct1.jpg";
 import ct2 from "../assets/images/ct2.jpg";
@@ -47,6 +47,9 @@ const therapies = [
 ];
 
 const CouplesTherapy = () => {
+   useEffect(() => {
+      document.title = 'Couples Therapy | Dee Plus';
+    }, []);
   const navigate = useNavigate();
 
   return (

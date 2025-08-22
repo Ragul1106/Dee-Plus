@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import aboutImage from "../assets/images/about1.png";
 import whoImg from "../assets/images/about2.png";
 import whatImg from "../assets/images/about3.png";
@@ -10,6 +10,9 @@ import doraImg from "../assets/images/teacher1.png";
 
 
 function AboutUs() {
+   useEffect(() => {
+      document.title = 'About Us | Dee Plus';
+    }, []);
   const data = [
     {
       title: "Who we are",

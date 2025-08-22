@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import heroBanner from "../assets/images/hero_banner.jpg";
 import joinNowButton from "../assets/images/join_now_button.png";
@@ -12,6 +12,9 @@ import BlogSection from "../components/BlogSection";
 import FAQ from "../components/FAQ";
 
 const HeroSection = () => {
+   useEffect(() => {
+      document.title = 'Home | Dee Plus';
+    }, []);
   const navigate = useNavigate();
 
   return (

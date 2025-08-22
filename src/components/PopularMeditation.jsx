@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { IoPlay, IoPause  } from "react-icons/io5";
 import pascal from "../assets/images/pascal.png";
 import alexis from "../assets/images/alexis.png";
@@ -8,6 +8,9 @@ import sebene from "../assets/images/sebene.png";
 
 
 function FreeTrails() {
+   useEffect(() => {
+      document.title = ' Free Trails | Dee Plus';
+    }, []);
   const audioRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
   const [isPlaying, setIsPlaying] = useState([false, false, false, false, false]);
   const [progress, setProgress] = useState([0, 0, 0, 0, 0]);

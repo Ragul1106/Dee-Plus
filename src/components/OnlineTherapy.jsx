@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ot1 from "../assets/images/ot1.jpg";
 import ot2 from "../assets/images/ot2.jpg";
@@ -47,6 +47,9 @@ const therapies = [
 ];
 
 const OnlineTherapy = () => {
+   useEffect(() => {
+      document.title = 'Online Therapy | Dee Plus';
+    }, []);
   const navigate = useNavigate();
 
   return (

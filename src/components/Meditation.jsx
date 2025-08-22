@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import meditationImage from "../assets/images/meditation.jpg";
 
 const MeditationSection = () => {
+     useEffect(() => {
+        document.title = 'Meditation | Dee Plus';
+      }, []);
     const navigate = useNavigate();
     const duration = "5:00";
     return (

@@ -6,12 +6,12 @@ const TermsAndConditions = () => {
   }, []);
 
   return (
-    <div className="min-h-screen px-4 sm:px-8 lg:px-24 py-10 mt-28 md:mt-28 lg:mt-28 bg-[#FEEEEE] ">
+    <div className="min-h-screen px-4 sm:px-8 lg:px-24 py-10 mt-8 md:mt-8 lg:mt-8 bg-[#FEEEEE] ">
       <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
         Terms & Conditions – Dee Plus
       </h1>
       <p className="text-base text-gray-600 mb-6">
-        <span className="font-semibold">Effective Date:</span> 19/08/25
+        <span className="font-semibold">Effective Date:</span> 29/08/25
       </p>
 
       <p className="text-lg text-gray-700 mb-8 leading-relaxed">
