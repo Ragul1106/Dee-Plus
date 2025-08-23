@@ -1,9 +1,11 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import oilPastelGreen from "../assets/images/oil-pastel-green-image.jpg";
 import teamImage from "../assets/images/teamimage.jpg";
 import meetButton from "../assets/images/meet_our_team_button.png";
 
 const AboutSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative w-full px-4 sm:px-6 mt-64 md:mt-80 lg:mt-0">
       <div className="relative w-full">
@@ -39,11 +41,14 @@ const AboutSection = () => {
             behavioral, or psychological challenges.
           </p>
           <div className="mt-6 mb-10 md:mb-10 lg:mb-0 flex justify-center ">
+            <button
+              onClick={() => navigate("/meditation")} >
             <img
               src={meetButton}
               alt="Join Now"
               className="w-[140px] sm:w-[160px] md:w-[180px] cursor-pointer transition-transform hover:scale-105"
             />
+            </button>
           </div>
         </div>
       </div>

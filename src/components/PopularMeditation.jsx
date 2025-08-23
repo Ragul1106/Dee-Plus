@@ -1,59 +1,65 @@
 import { useRef, useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { IoPlay, IoPause  } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import { IoPlay, IoPause } from "react-icons/io5";
 import pascal from "../assets/images/pascal.png";
 import alexis from "../assets/images/alexis.png";
 import sharon from "../assets/images/sharon.png";
 import joseph from "../assets/images/joseph.png";
 import sebene from "../assets/images/sebene.png";
 
+import a1 from "../assets/audios/a1.mp3";
+import a2 from "../assets/audios/a2.mp3";
+import a3 from "../assets/audios/a3.mp3";
+import a4 from "../assets/audios/a4.mp3";
+import a5 from "../assets/audios/a5.mp3";
+
 
 function FreeTrails() {
-   useEffect(() => {
-      document.title = ' Free Trails | Dee Plus';
-    }, []);
-    const navigate = useNavigate();
+  useEffect(() => {
+    document.title = ' Free Trails | Dee Plus';
+  }, []);
+  const navigate = useNavigate();
   const audioRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
   const [isPlaying, setIsPlaying] = useState([false, false, false, false, false]);
   const [progress, setProgress] = useState([0, 0, 0, 0, 0]);
 
   const audios = [
-  {
-    img: pascal,
-    author: "Pascal Auclair",
-    title: "Rediscover the Familiar",
-    desc: "This is the first time you've ever been here, now. Pascal invites you to discover the vivid and mysterious experience of this new moment.",
-    src: "https://soundcloud.com/soundhelix/soundhelix-song-10?in=soundhelix/sets/soundhelix-examples&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-  },
-  {
-    img: alexis,
-    author: "Alexis Santos",
-    title: "Natural mindful walking meditation",
-    desc: "Taking a relaxed walk mindfully will soothe the nervous system, get you outside, and can refresh you mentally when you're feeling low or off.",
-    src: "https://soundcloud.com/soundhelix/soundhelix-song-13?in=soundhelix/sets/soundhelix-examples&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-  },
-  {
-    img: sharon,
-    author: "Sharon Salzberg",
-    title: "Being with Big Emotions",
-    desc: "Bring an open minded curiosity to your big emotions and get to know yourself more fully, developing resilience to deal with all the feels.",
-    src: "https://soundcloud.com/soundhelix/soundhelix-song-15?in=soundhelix/sets/soundhelix-examples&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-  },
-  {
-    img: joseph,
-    author: "Joseph Goldstein",
-    title: "Balanced Compassion",
-    desc: "We're living in challenging times. Try practicing balance, letting you open to the suffering of the world without becoming overwhelmed.",
-    src: "https://soundcloud.com/soundhelix/the-stationary-ark?in=soundhelix/sets/soundhelix-examples&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-  },
-  {
-    img: sebene,
-    author: "Sebene Selassie",
-    title: "Self-kindness for stress",
-    desc: "Showing self compassion to ourselves in hard times bolsters our resilience, so we can learn from setbacks rather than getting stuck in rumination.",
-    src: "https://soundcloud.com/soundhelix/soundhelix-song-9?in=soundhelix/sets/soundhelix-examples&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-  },
-];
+    {
+      img: pascal,
+      author: "Pascal Auclair",
+      title: "Rediscover the Familiar",
+      desc: "This is the first time you've ever been here, now. Pascal invites you to discover the vivid and mysterious experience of this new moment.",
+      src:  a1 ,
+    },
+    {
+      img: alexis,
+      author: "Alexis Santos",
+      title: "Natural mindful walking meditation",
+      desc: "Taking a relaxed walk mindfully will soothe the nervous system, get you outside, and can refresh you mentally when you're feeling low or off.",
+      src:  a2 ,
+    },
+    {
+      img: sharon,
+      author: "Sharon Salzberg",
+      title: "Being with Big Emotions",
+      desc: "Bring an open minded curiosity to your big emotions and get to know yourself more fully, developing resilience to deal with all the feels.",
+      src:  a3 ,
+    },
+    {
+      img: joseph,
+      author: "Joseph Goldstein",
+      title: "Balanced Compassion",
+      desc: "We're living in challenging times. Try practicing balance, letting you open to the suffering of the world without becoming overwhelmed.",
+      src: a4 ,
+    },
+    {
+      img: sebene,
+      author: "Sebene Selassie",
+      title: "Self-kindness for stress",
+      desc: "Showing self compassion to ourselves in hard times bolsters our resilience, so we can learn from setbacks rather than getting stuck in rumination.",
+      src: a5 ,
+    },
+  ];
 
   const togglePlay = (index) => {
     const newStates = [...isPlaying];
@@ -109,7 +115,7 @@ function FreeTrails() {
             >
               <span className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/70  rounded-full">
                 {isPlaying[index] ? (
-                  <IoPause  className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                  <IoPause className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 ) : (
                   <IoPlay className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 )}
@@ -158,9 +164,9 @@ function FreeTrails() {
       ))}
 
       <div className="flex justify-center my-6 w-full">
-        <button 
-        onClick={() => navigate("/contact")}
-        className="w-full sm:w-auto bg-gray-900 text-white cursor-pointer font-semibold py-2 px-8 sm:px-16 lg:px-20 text-sm sm:text-lg md:text-xl rounded-xl hover:bg-gray-800 transition">
+        <button
+          onClick={() => navigate("/contact")}
+          className="w-full sm:w-auto bg-gray-900 text-white cursor-pointer font-semibold py-2 px-8 sm:px-16 lg:px-20 text-sm sm:text-lg md:text-xl rounded-xl hover:bg-gray-800 transition">
           Get 14 Days Free Trial
         </button>
       </div>
