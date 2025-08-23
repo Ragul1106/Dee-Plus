@@ -15,7 +15,7 @@ import GroupTherapy from "./components/GroupTherapy";
 import OnlineTherapy from "./components/OnlineTherapy";
 import Contact from "./components/ContactUs";
 import Payment from "./components/PaymentPage";
-import FAQ from "./components/FAQ";
+// import FAQ from "./components/FAQ";
 import TermsAndConditions from "./components/TermsAndConditions";
 import HelpCenter from "./components/HelpCenter";
 import Partnership from "./components/PartnerShip";
@@ -48,7 +48,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/approach-form" element={< ApproachForm/>} />
           <Route path="/payment" element={<Payment />} />
-          <Route path="/faq" element={<FAQ />} />
+          {/* <Route path="/faq" element={<FAQ />} /> */}
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/help-center" element={<HelpCenter />} />
           <Route path="/partnership" element={<Partnership />} />

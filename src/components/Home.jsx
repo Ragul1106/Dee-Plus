@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import heroBanner from "../assets/images/hero_banner.jpg";
 import joinNowButton from "../assets/images/join_now_button.png";
 import DeePlus from "../components/DeePlus";
@@ -12,10 +12,18 @@ import BlogSection from "../components/BlogSection";
 import FAQ from "../components/FAQ";
 
 const HeroSection = () => {
-   useEffect(() => {
-      document.title = 'Home | Dee Plus';
-    }, []);
+  useEffect(() => {
+    document.title = 'Home | Dee Plus';
+  }, []);
   const navigate = useNavigate();
+  const location = useLocation();
+  const faq = useRef(null);
+
+   useEffect(() => {
+    if (location.hash === "#faq" && faq.current) {
+      faq.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
 
   return (
     <div className="bg-[#feeeee] ">
@@ -62,7 +70,9 @@ const HeroSection = () => {
       <Testimonials />
       <OurTeam />
       <BlogSection />
-      <FAQ />
+      <div id="faq" ref={faq}>
+        <FAQ />
+      </div>
     </div>
   );
 };

@@ -36,7 +36,7 @@ const Footer = () => {
         <div>
           <h3 className="text-sm md:text-lg font-semibold">Quick Links</h3>
           <ul className="text-sm md:text-lg space-y-1">
-            <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
+            <Link to="/#faq" className="hover:underline"> FAQ</Link>
             <li><Link to="/terms-and-conditions" className="hover:underline">Terms & Conditions</Link></li>
             <li><Link to="/help-center" className="hover:underline">Help Center</Link></li>
             <li><Link to="/partnership" className="hover:underline">Partnership</Link></li>
@@ -61,11 +61,11 @@ const Footer = () => {
             6, Hethendran Street, Kongu Nagar, Karur - 26
           </p>
           <p className="flex items-center gap-2 text-sm md:text-lg cursor-pointer" onClick={() => navigate("tel:+953232556")}>
-            <img src={phoneIcon} alt="Phone" className="w-4 h-4" /> 
+            <img src={phoneIcon} alt="Phone" className="w-4 h-4" />
             +9532 32556
           </p>
           <p className="flex items-center gap-2 text-sm md:text-lg cursor-pointer" onClick={() => navigate("mailto:deepluswell@gmail.com")}>
-            <img src={emailIcon} alt="Email" className="w-4 h-4" /> 
+            <img src={emailIcon} alt="Email" className="w-4 h-4" />
             deepluswell@gmail.com
           </p>
         </div>

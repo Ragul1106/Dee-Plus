@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { IoPlay, IoPause  } from "react-icons/io5";
 import pascal from "../assets/images/pascal.png";
 import alexis from "../assets/images/alexis.png";
@@ -11,6 +12,7 @@ function FreeTrails() {
    useEffect(() => {
       document.title = ' Free Trails | Dee Plus';
     }, []);
+    const navigate = useNavigate();
   const audioRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
   const [isPlaying, setIsPlaying] = useState([false, false, false, false, false]);
   const [progress, setProgress] = useState([0, 0, 0, 0, 0]);
@@ -156,7 +158,9 @@ function FreeTrails() {
       ))}
 
       <div className="flex justify-center my-6 w-full">
-        <button className="w-full sm:w-auto bg-gray-900 text-white font-semibold py-2 px-8 sm:px-16 lg:px-20 text-sm sm:text-lg md:text-xl rounded-xl hover:bg-gray-800 transition">
+        <button 
+        onClick={() => navigate("/contact")}
+        className="w-full sm:w-auto bg-gray-900 text-white cursor-pointer font-semibold py-2 px-8 sm:px-16 lg:px-20 text-sm sm:text-lg md:text-xl rounded-xl hover:bg-gray-800 transition">
           Get 14 Days Free Trial
         </button>
       </div>

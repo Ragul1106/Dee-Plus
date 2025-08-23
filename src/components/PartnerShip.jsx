@@ -1,9 +1,57 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Partnership = () => {
-   useEffect(() => {
-      document.title = 'Partnership | Dee Plus';
-    }, []);
+  useEffect(() => {
+    document.title = "Partnership | Dee Plus";
+  }, []);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    organization: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const isValidName = (name) => /^[A-Za-z\s]+$/.test(name); 
+  const isValidEmail = (email) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); 
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { fullName, organization, email, message } = formData;
+
+    if (!fullName.trim() || !organization.trim() || !email.trim() || !message.trim()) {
+      toast.error("⚠️ Please fill out all fields before submitting.");
+      return;
+    }
+
+    if (!isValidName(fullName)) {
+      toast.error("⚠️ Name should only contain letters and spaces.");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      toast.error("⚠️ Please enter a valid email address.");
+      return;
+    }
+
+    toast.success("✅ Partnership request submitted! We will call you soon.");
+
+    setFormData({
+      fullName: "",
+      organization: "",
+      email: "",
+      message: "",
+    });
+  };
+
   return (
     <div className="bg-[#fdf6f9] min-h-screen py-12 px-6 sm:px-12 lg:px-20">
       <div className="text-center mb-12">
@@ -44,18 +92,20 @@ const Partnership = () => {
         </div>
       </div>
 
-      {/* Partnership Form */}
       <div className="bg-white shadow-md rounded-2xl p-8 max-w-3xl mx-auto">
         <h2 className="text-2xl font-semibold text-[#6F145F] mb-6 text-center">
           Partnership Inquiry Form
         </h2>
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label className="block text-gray-700 font-medium mb-2">
               Full Name
             </label>
             <input
               type="text"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
               placeholder="Enter your name"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6F145F]"
             />
@@ -67,6 +117,9 @@ const Partnership = () => {
             </label>
             <input
               type="text"
+              name="organization"
+              value={formData.organization}
+              onChange={handleChange}
               placeholder="Enter your organization name"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6F145F]"
             />
@@ -76,6 +129,9 @@ const Partnership = () => {
             <label className="block text-gray-700 font-medium mb-2">Email</label>
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Enter your email"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6F145F]"
             />
@@ -87,6 +143,9 @@ const Partnership = () => {
             </label>
             <textarea
               rows="4"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Tell us how you would like to collaborate"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6F145F]"
             ></textarea>
@@ -94,12 +153,14 @@ const Partnership = () => {
 
           <button
             type="submit"
-            className="bg-[#6F145F] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#4a0f42] transition"
+            className="bg-[#6F145F] text-white cursor-pointer font-semibold px-6 py-3 rounded-lg hover:bg-[#4a0f42] transition"
           >
             Submit Partnership Request
           </button>
         </form>
       </div>
+
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
