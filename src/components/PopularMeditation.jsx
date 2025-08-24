@@ -93,7 +93,7 @@ function FreeTrails() {
   };
 
   return (
-    <div className="min-h-screen bg-pink-50 flex flex-col items-center py-8 px-3 space-y-6">
+    <div className="min-h-screen bg-[#FEEEEE] flex flex-col items-center py-8 px-3 space-y-6">
       <h2 className="text-center text-lg sm:text-2xl md:text-3xl font-semibold text-[#6F145F] my-4">
         Discover popular meditations.
       </h2>
